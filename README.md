@@ -59,13 +59,7 @@ pip install pillow
 
 ## Ejecución
 
-Desde la raíz del proyecto:
-
-```powershell
-python ".\Fj Software\GUI.py"
-```
-
-Si copiaste únicamente el contenido de `Fj Software` como raíz del proyecto:
+Desde la raíz del proyecto `Fj Software`:
 
 ```powershell
 python ".\GUI.py"

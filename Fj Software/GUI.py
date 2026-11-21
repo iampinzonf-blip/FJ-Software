@@ -3,6 +3,7 @@ from tkinter import messagebox, ttk
 from PIL import Image, ImageTk
 import math
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from customers import CustomerError, CustomerManager, CustomerNotFound
 from reservations import (
@@ -19,6 +20,13 @@ from services import (
     ServiceManager,
     ServiceNotFound,
 )
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+
+def asset_path(relative_path):
+    asset_relative_path = relative_path.replace("Fj Software/Interfaz/", "Interfaz/")
+    return str(PROJECT_ROOT / Path(asset_relative_path))
 
 
 # --- Constants ---
@@ -884,7 +892,7 @@ style.map(
 
 #- Images
 i_login_background = Image.open(
-    "Fj Software/Interfaz/Login/1x/Login_background.png"
+    asset_path("Fj Software/Interfaz/Login/1x/Login_background.png")
 )
 
 i_login_background = i_login_background.resize((477, 480))
@@ -940,7 +948,7 @@ e_password .place(
 # - Buttons
 
 i_Sign_In = Image.open(
-    "Fj Software/Interfaz/Login/1x/SigIn_Button.png"
+    asset_path("Fj Software/Interfaz/Login/1x/SigIn_Button.png")
 )
 
 i_Sign_In = i_Sign_In.resize(
@@ -986,7 +994,7 @@ n_main.add(f_reservations, text="Reservations")
 # - Images
 
 i_Home_background = Image.open(
-    "Fj Software/Interfaz/Home/1x/Home_background.png"
+    asset_path("Fj Software/Interfaz/Home/1x/Home_background.png")
 )
 
 i_Home_background = i_Home_background.resize((1279, 848))
@@ -1010,7 +1018,7 @@ l_Home_background.place(x=-2, y=0)
 # - Buttons
 
 i_Clients_Home_button = Image.open(
-    "Fj Software/Interfaz/Home/1x/Clients_Home_button.png"
+    asset_path("Fj Software/Interfaz/Home/1x/Clients_Home_button.png")
 )
 
 i_Clients_Home_button = i_Clients_Home_button.resize(
@@ -1042,7 +1050,7 @@ b_Clients_Home_button.place(
 )
 
 i_Services_Home_button = Image.open(
-    "Fj Software/Interfaz/Home/1x/Services_Home_Button.png"
+    asset_path("Fj Software/Interfaz/Home/1x/Services_Home_Button.png")
 )
 
 i_Services_Home_button = i_Services_Home_button.resize(
@@ -1074,7 +1082,7 @@ b_Services_Home_button.place(
 )
 
 i_Reservations_Home_button = Image.open(
-    "Fj Software/Interfaz/Home/1x/Reservations_Home_Button.png"
+    asset_path("Fj Software/Interfaz/Home/1x/Reservations_Home_Button.png")
 )
 
 i_Reservations_Home_button = i_Reservations_Home_button.resize(
@@ -1106,7 +1114,7 @@ b_Reservations_Home_button.place(
 )
 
 i_logOut_Home_Button = Image.open(
-    "Fj Software/Interfaz/Home/1x/logOut_Home_Button.png"
+    asset_path("Fj Software/Interfaz/Home/1x/logOut_Home_Button.png")
 )
 
 i_logOut_Home_Button = i_logOut_Home_Button.resize(
@@ -1142,7 +1150,7 @@ b_logOut_Home_Button.place(
 # - Images
 
 i_Costumer_background = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_background.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_background.png")
 )
 
 i_Costumer_background = i_Costumer_background.resize((993, 891))
@@ -1243,7 +1251,7 @@ tv_costumers.place(
 # - Buttons
 
 i_Costumer_Register_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Register_button.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Register_button.png")
 )
 
 i_Costumer_Register_button = i_Costumer_Register_button.resize(
@@ -1275,7 +1283,7 @@ b_Costumer_Register.place(
 )
 
 i_Costumer_Search_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_button.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_button.png")
 )
 
 i_Costumer_Search_button = i_Costumer_Search_button.resize(
@@ -1309,7 +1317,7 @@ b_Costumer_Search.place(
 # - Customer Search
 
 i_Costumer_search_background = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_background.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_background.png")
 )
 
 i_Costumer_search_background = i_Costumer_search_background.resize((642, 279))
@@ -1333,7 +1341,7 @@ l_Costumer_search_background.place(x=0, y=0)
 # -- Buttons
 
 i_Costumer_Search_ID_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_ID.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_ID.png")
 )
 
 i_Costumer_Search_ID_button = i_Costumer_Search_ID_button.resize(
@@ -1365,7 +1373,7 @@ b_Costumer_Search_ID.place(
 )
 
 i_Costumer_Search_CC_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_CC.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_CC.png")
 )
 i_Costumer_Search_CC_button = i_Costumer_Search_CC_button.resize(
     (296, 86)
@@ -1393,7 +1401,7 @@ b_Costumer_Search_CC.place(
 )
 
 i_Costumer_Search_Mail_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_Mail.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_Mail.png")
 )
 i_Costumer_Search_Mail_button = i_Costumer_Search_Mail_button.resize(
     (296, 86)
@@ -1421,7 +1429,7 @@ b_Costumer_Search_Mail.place(
 )
 
 i_Costumer_Search_Name_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_Name.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_Name.png")
 )
 i_Costumer_Search_Name_button = i_Costumer_Search_Name_button.resize(
     (296, 86)
@@ -1450,7 +1458,7 @@ b_Costumer_Search_Name.place(
 
 
 i_Costumer_Search_Dialogue_button = Image.open(
-    "Fj Software/Interfaz/Costumer/1x/Costumer_Search_Dialogue_button.png"
+    asset_path("Fj Software/Interfaz/Costumer/1x/Costumer_Search_Dialogue_button.png")
 )
 
 i_Costumer_Search_Dialogue_button = i_Costumer_Search_Dialogue_button.resize(
@@ -1477,7 +1485,7 @@ b_Costumer_Search_Dialogue = tk.Button(
 )
 
 b_Costumer_Search_Dialogue.place(
-    x=222,
+    x=190,
     y=401
 )
 
@@ -1510,7 +1518,7 @@ e_costumer_search.place(
 # - Images
 
 i_Services_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Background.png")
 )
 
 i_Services_background = i_Services_background.resize((946, 416))
@@ -1570,7 +1578,7 @@ tv_services.place(
 # - Buttons
 
 i_Services_Advysory_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Advysory_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Advysory_button.png")
 )
 
 i_Services_Advysory_button = i_Services_Advysory_button.resize(
@@ -1602,7 +1610,7 @@ b_Services_Advysory.place(
 )
 
 i_Services_Book_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Book_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Book_button.png")
 )
 
 i_Services_Book_button = i_Services_Book_button.resize(
@@ -1634,7 +1642,7 @@ b_Services_Book.place(
 )
 
 i_Services_Rent_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Rent_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Rent_button.png")
 )
 
 i_Services_Rent_button = i_Services_Rent_button.resize(
@@ -1666,7 +1674,7 @@ b_Services_Rent.place(
 )
 
 i_Services_Search_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Search_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Search_button.png")
 )
 
 i_Services_Search_button = i_Services_Search_button.resize(
@@ -1698,7 +1706,7 @@ b_Services_Search.place(
 )
 
 i_Services_Delete_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Delete_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Delete_button.png")
 )
 
 i_Services_Delete_button = i_Services_Delete_button.resize(
@@ -1734,7 +1742,7 @@ b_Services_Delete.place(
 # Images
 
 i_Services_Advysory_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Advysory_background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Advysory_background.png")
 )
 
 i_Services_Advysory_background = i_Services_Advysory_background.resize((874, 767))
@@ -1824,7 +1832,7 @@ e_Services_Advysory_area.place(x=526, y=592)
 # Buttons
 
 i_Services_Advysory_Register_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Advysory_Register_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Advysory_Register_button.png")
 )
 
 i_Services_Advysory_Register_button = i_Services_Advysory_Register_button.resize(
@@ -1858,7 +1866,7 @@ b_Services_Advysory_Register.place(
 # - Book
 
 i_Services_Book_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Book_background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Book_background.png")
 )
 i_Services_Book_background = i_Services_Book_background.resize((874, 767))
 img_Services_Book_background = ImageTk.PhotoImage(
@@ -1921,7 +1929,7 @@ e_Services_Book_location = ttk.Entry(
 e_Services_Book_location.place(x=754, y=530)
 
 i_Services_Book_Register_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Book_Register_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Book_Register_button.png")
 )
 i_Services_Book_Register_button = i_Services_Book_Register_button.resize(
     (264, 55)
@@ -1948,7 +1956,7 @@ b_Services_Book_Register.place(x=630, y=632)
 # - Rent
 
 i_Services_Rent_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Rent_background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Rent_background.png")
 )
 i_Services_Rent_background = i_Services_Rent_background.resize((874, 767))
 img_Services_Rent_background = ImageTk.PhotoImage(
@@ -2049,7 +2057,7 @@ e_Services_Rent_actual_stock = ttk.Entry(
 e_Services_Rent_actual_stock.place(x=527, y=560)
 
 i_Services_Rent_Register_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Service_Rent_Register_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Service_Rent_Register_button.png")
 )
 i_Services_Rent_Register_button = i_Services_Rent_Register_button.resize(
     (264, 55)
@@ -2077,7 +2085,7 @@ b_Services_Rent_Register.place(x=630, y=632)
 # - Search for a Service
 
 i_Services_Search_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Search_background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Search_background.png")
 )
 i_Services_Search_background = i_Services_Search_background.resize((640, 219))
 img_Services_Search_background = ImageTk.PhotoImage(
@@ -2093,7 +2101,7 @@ l_Services_Search_background.image = img_Services_Search_background
 l_Services_Search_background.place(x=0, y=0)
 
 i_Services_Search_ID = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Search_ID.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Search_ID.png")
 )
 i_Services_Search_ID = i_Services_Search_ID.resize((296, 86))
 img_Services_Search_ID = ImageTk.PhotoImage(
@@ -2116,7 +2124,7 @@ b_Services_Search_ID = tk.Button(
 b_Services_Search_ID.place(x=23, y=87)
 
 i_Services_Search_name = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Search_name.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Search_name.png")
 )
 i_Services_Search_name = i_Services_Search_name.resize((296, 86))
 img_Services_Search_name = ImageTk.PhotoImage(
@@ -2139,7 +2147,7 @@ b_Services_Search_name = tk.Button(
 b_Services_Search_name.place(x=347, y=87)
 
 i_Services_Search_Search_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Search_Search_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Search_Search_button.png")
 )
 img_Services_Search_Search_button = ImageTk.PhotoImage(
     i_Services_Search_Search_button,
@@ -2177,7 +2185,7 @@ e_service_search.place(x=179, y=308, height=30)
 # - Delete a Service
 
 i_Services_Delete_background = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Delete_background.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Delete_background.png")
 )
 i_Services_Delete_background = i_Services_Delete_background.resize((640, 168))
 img_Services_Delete_background = ImageTk.PhotoImage(
@@ -2193,7 +2201,7 @@ l_Services_Delete_background.image = img_Services_Delete_background
 l_Services_Delete_background.place(x=0, y=0)
 
 i_Services_Delete_Delete_button = Image.open(
-    "Fj Software/Interfaz/Services/1x/Services_Delete_Delete_button.png"
+    asset_path("Fj Software/Interfaz/Services/1x/Services_Delete_Delete_button.png")
 )
 img_Services_Delete_Delete_button = ImageTk.PhotoImage(
     i_Services_Delete_Delete_button,
@@ -2231,7 +2239,7 @@ e_service_delete.place(x=179, y=284)
 # --- Reservations
 
 i_Reservations_background = Image.open(
-    "Fj Software/Interfaz/Reservations/1x/Reservations_background.png"
+    asset_path("Fj Software/Interfaz/Reservations/1x/Reservations_background.png")
 )
 i_Reservations_background = i_Reservations_background.resize((939, 904))
 img_Reservations_background = ImageTk.PhotoImage(
@@ -2330,7 +2338,7 @@ e_reservations_duration = ttk.Entry(
 e_reservations_duration.place(x=38, y=510, width=208, height=26)
 
 i_Reservations_Register_button = Image.open(
-    "Fj Software/Interfaz/Reservations/1x/Reservations_Register_Buttons.png"
+    asset_path("Fj Software/Interfaz/Reservations/1x/Reservations_Register_Buttons.png")
 )
 img_Reservations_Register_button = ImageTk.PhotoImage(
     i_Reservations_Register_button,
@@ -2358,7 +2366,7 @@ e_reservations_search_id = ttk.Entry(
 e_reservations_search_id.place(x=63, y=763, width=206, height=26)
 
 i_Reservations_Search_button = Image.open(
-    "Fj Software/Interfaz/Reservations/1x/Reservations_Search_button.png"
+    asset_path("Fj Software/Interfaz/Reservations/1x/Reservations_Search_button.png")
 )
 img_Reservations_Search_button = ImageTk.PhotoImage(
     i_Reservations_Search_button,
